@@ -242,8 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("editJudul").value;
         books[targetBookIndex].author =
           document.getElementById("editPenulis").value;
-        books[targetBookIndex].year =
-          document.getElementById("editTahun").value;
+        books[targetBookIndex].year = Number(
+          document.getElementById("editTahun").value
+        );
         books[targetBookIndex].isCompleted =
           document.getElementById("editDibaca").checked;
       }
@@ -278,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function addBook() {
     const title = document.getElementById("judul").value;
     const author = document.getElementById("penulis").value;
-    const year = document.getElementById("tahun").value;
+    const year = Number(document.getElementById("tahun").value);
     const isCompleted = document.getElementById("dibaca").checked;
     const generatedID = `Book-${+new Date()}`;
 
